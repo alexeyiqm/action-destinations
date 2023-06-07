@@ -105,7 +105,7 @@ export default class GenerateAction extends Command {
         flags.force
       )
       this.spinner.succeed(`Scaffold action`)
-    } catch (err) {
+    } catch (err: any) {
       this.spinner.fail(`Scaffold action: ${chalk.red(err.message)}`)
       this.exit()
     }
@@ -122,7 +122,7 @@ export default class GenerateAction extends Command {
         true
       )
       this.spinner.succeed(`Creating snapshot tests for ${chalk.bold(`${destination}'s ${slug}`)} destination action`)
-    } catch (err) {
+    } catch (err: any) {
       this.spinner.fail(`Snapshot test creation failed: ${chalk.red(err.message)}`)
       this.exit()
     }
@@ -136,7 +136,7 @@ export default class GenerateAction extends Command {
       const updatedCode = addKeyToExport(destinationStr, exportName, 'actions', slug)
       fs.writeFileSync(entryFile, updatedCode, 'utf8')
       this.spinner.succeed()
-    } catch (err) {
+    } catch (err: any) {
       this.spinner.fail(chalk`Failed to update your destination imports: ${err.message}`)
       this.exit()
     }
@@ -145,7 +145,7 @@ export default class GenerateAction extends Command {
       this.spinner.start(chalk`Generating types for {magenta ${slug}} action`)
       await GenerateTypes.run(['--path', entryFile])
       this.spinner.succeed()
-    } catch (err) {
+    } catch (err: any) {
       this.spinner.fail(chalk`Generating types for {magenta ${slug}} action: ${err.message}`)
       this.exit()
     }

@@ -4,7 +4,7 @@ import get from 'lodash/get'
 import { Settings } from '../generated-types'
 import { Payload } from '../receiveEvents/generated-types'
 import { eventTableListId } from './tablemaintutilities'
-import { AuthTokens } from '@segment/actions-core/src/destination-kit/parse-settings'
+import { AuthTokens } from '@segment/actions-core/destination-kit/parse-settings'
 
 export function parseSections(section: { [key: string]: string }, nestDepth: number) {
   const parseResults: { [key: string]: string } = {}

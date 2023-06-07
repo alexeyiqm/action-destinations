@@ -1,7 +1,7 @@
 import { IntegrationError } from '@segment/actions-core'
 import { RequestClient } from '@segment/actions-core'
 import { Settings } from '../generated-types'
-import { AuthTokens } from '@segment/actions-core/src/destination-kit/parse-settings'
+import { AuthTokens } from '@segment/actions-core/destination-kit/parse-settings'
 
 export let eventTableListId = ''
 

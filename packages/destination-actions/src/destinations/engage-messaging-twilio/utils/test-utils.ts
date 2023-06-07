@@ -1,4 +1,4 @@
-import { Logger } from '@segment/actions-core/src/destination-kit'
+import { Logger } from '@segment/actions-core/destination-kit'
 import { omit } from '@segment/actions-core'
 import { createMessagingTestEvent } from '../../../lib/engage-test-data/create-messaging-test-event'
 

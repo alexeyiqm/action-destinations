@@ -4,7 +4,7 @@ import { createTestIntegration } from '@segment/actions-core'
 import { createMessagingTestEvent } from '../../../lib/engage-test-data/create-messaging-test-event'
 import { createLoggerMock } from '../utils/test-utils'
 import { Payload } from '../sendMobilePush/generated-types'
-import { InputData } from '@segment/actions-core/src/mapping-kit'
+import { InputData } from '@segment/actions-core/mapping-kit'
 import { PushSender } from '../sendMobilePush/push-sender'
 
 const twilio = createTestIntegration(Twilio)

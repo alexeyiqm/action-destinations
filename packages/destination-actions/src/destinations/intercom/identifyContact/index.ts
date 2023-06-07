@@ -110,7 +110,7 @@ const action: ActionDefinition<Settings, Payload> = {
         return updateIntercomContact(request, contact.id, payload)
       }
       return await createIntercomContact(request, payload)
-    } catch (error) {
+    } catch (error: any) {
       if (error?.response?.status === 409) {
         // The contact already exists but the Intercom cache most likely wasn't updated yet
         throw new RetryableError(

@@ -165,7 +165,7 @@ function validateObject(value: unknown, stack: string[] = []) {
   keys.forEach((k) => {
     try {
       validate(obj[k], [...stack, k])
-    } catch (e) {
+    } catch (e: any) {
       errors.push(e)
     }
   })
@@ -200,7 +200,7 @@ function validateObjectWithFields(input: unknown, fields: ValidateFields, stack:
           optional(obj[prop], [...stack, prop])
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       errors.push(error)
     }
   })
@@ -226,7 +226,7 @@ function directive(names: string[] | string, fn: DirectiveValidator): void {
     directives[name] = (v: unknown, stack: string[] = []) => {
       try {
         fn(v, [...stack, name])
-      } catch (e) {
+      } catch (e: any) {
         if (e instanceof ValidationError || e instanceof AggregateError) {
           throw e
         }

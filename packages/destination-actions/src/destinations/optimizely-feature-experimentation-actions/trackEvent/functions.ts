@@ -61,7 +61,7 @@ export async function getEventKeys(request: RequestClient, settings: Settings) {
     return {
       choices: [...choices]
     }
-  } catch (err) {
+  } catch (err: any) {
     return {
       choices: [],
       error: {

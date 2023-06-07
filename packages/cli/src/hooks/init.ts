@@ -9,7 +9,7 @@ const hook: Hook<'init'> = async function ({ config }) {
   let cpsModule: string
   try {
     cpsModule = require.resolve('@segment/control-plane-service-client')
-  } catch (err) {
+  } catch (err: any) {
     if (err.code === 'MODULE_NOT_FOUND') {
       return
     }
